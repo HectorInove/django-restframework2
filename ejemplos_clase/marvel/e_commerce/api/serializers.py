@@ -7,15 +7,24 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 
 class ComicSerializer(serializers.ModelSerializer):
-    # algo =  serializers.SerializerMethodField()
+    # data =  serializers.SerializerMethodField()
     
     class Meta:
         model = Comic
         fields = ('marvel_id','title', 'description', 'price', 'stock_qty', 'picture')
-        # fields = ('marvel_id', 'title', 'algo')
+        # fields = ('marvel_id', 'title', 'data')
 
-    # def get_algo(self, obj):
-    #     return {'hola':10}
+    # def get_data(self, obj):
+    #     print('obj: ', obj.title)
+
+    #     return {
+    #         'titulo': obj.title,
+    #         'description': obj.description,
+    #         'imagen': obj.picture,
+    #         'precio': obj.price,
+    #         'stock_qty': obj.stock_qty,
+    #         'total': obj.stock_qty * obj.price
+    #     }
 
 
 class UserSerializer(serializers.ModelSerializer):
